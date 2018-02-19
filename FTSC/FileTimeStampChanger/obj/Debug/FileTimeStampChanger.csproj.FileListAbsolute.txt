@@ -1,0 +1,9 @@
+E:\work\tl\CREATE\filetimestampchange\salty_7-filetimestampchanger-99671484f6af\FileTimeStampChanger\bin\Debug\FileTimeStampChanger.exe.config
+E:\work\tl\CREATE\filetimestampchange\salty_7-filetimestampchanger-99671484f6af\FileTimeStampChanger\bin\Debug\FileTimeStampChanger.exe
+E:\work\tl\CREATE\filetimestampchange\salty_7-filetimestampchanger-99671484f6af\FileTimeStampChanger\bin\Debug\FileTimeStampChanger.pdb
+E:\work\tl\CREATE\filetimestampchange\salty_7-filetimestampchanger-99671484f6af\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.csprojResolveAssemblyReference.cache
+E:\work\tl\CREATE\filetimestampchange\salty_7-filetimestampchanger-99671484f6af\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.MainWindow.resources
+E:\work\tl\CREATE\filetimestampchange\salty_7-filetimestampchanger-99671484f6af\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.Properties.Resources.resources
+E:\work\tl\CREATE\filetimestampchange\salty_7-filetimestampchanger-99671484f6af\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.csproj.GenerateResource.Cache
+E:\work\tl\CREATE\filetimestampchange\salty_7-filetimestampchanger-99671484f6af\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.exe
+E:\work\tl\CREATE\filetimestampchange\salty_7-filetimestampchanger-99671484f6af\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.pdb
