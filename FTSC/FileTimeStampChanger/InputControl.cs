@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using System.Windows.Forms;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -84,6 +86,13 @@ namespace FileTimeStampChanger
             if (secUD.Value == -1)
             {
                 secUD.Value = 59;
+            }
+        }
+
+        private void txtFolderName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter){
+                folderOpen.PerformClick();
             }
         }
 

@@ -45,6 +45,15 @@
             this.txtFolderName = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnSelectClear = new System.Windows.Forms.Button();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.chkboxNotice = new System.Windows.Forms.CheckBox();
+            this.btnTest = new System.Windows.Forms.Button();
+            this.selectList = new System.Windows.Forms.ListBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.folderSelect = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -63,12 +72,6 @@
             this.txtStepEnd = new System.Windows.Forms.TextBox();
             this.folderOpen = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.folderSelect = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.btnTest = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minUD)).BeginInit();
@@ -214,14 +217,18 @@
             // 
             // txtFolderName
             // 
+            this.txtFolderName.AllowDrop = true;
             this.txtFolderName.Location = new System.Drawing.Point(49, 35);
             this.txtFolderName.Name = "txtFolderName";
             this.txtFolderName.Size = new System.Drawing.Size(358, 19);
             this.txtFolderName.TabIndex = 16;
             this.txtFolderName.Text = "E:\\work\\desktop\\test3";
+            this.txtFolderName.DragDrop += new System.Windows.Forms.DragEventHandler(this.txtFolderName_DragDrop);
+            this.txtFolderName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFolderName_KeyDown);
             // 
             // tabControl1
             // 
+            this.tabControl1.AllowDrop = true;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
@@ -232,8 +239,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnSelectClear);
+            this.tabPage1.Controls.Add(this.btnSelect);
+            this.tabPage1.Controls.Add(this.chkboxNotice);
             this.tabPage1.Controls.Add(this.btnTest);
-            this.tabPage1.Controls.Add(this.listBox1);
+            this.tabPage1.Controls.Add(this.selectList);
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.label5);
@@ -266,6 +276,91 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "フォルダ指定";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnSelectClear
+            // 
+            this.btnSelectClear.Location = new System.Drawing.Point(413, 143);
+            this.btnSelectClear.Name = "btnSelectClear";
+            this.btnSelectClear.Size = new System.Drawing.Size(70, 36);
+            this.btnSelectClear.TabIndex = 46;
+            this.btnSelectClear.Text = "選択クリア";
+            this.btnSelectClear.UseVisualStyleBackColor = true;
+            this.btnSelectClear.Click += new System.EventHandler(this.btnSelectClear_Click);
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(413, 93);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(70, 32);
+            this.btnSelect.TabIndex = 45;
+            this.btnSelect.Text = "選択";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // chkboxNotice
+            // 
+            this.chkboxNotice.AutoSize = true;
+            this.chkboxNotice.Location = new System.Drawing.Point(397, 346);
+            this.chkboxNotice.Name = "chkboxNotice";
+            this.chkboxNotice.Size = new System.Drawing.Size(72, 16);
+            this.chkboxNotice.TabIndex = 44;
+            this.chkboxNotice.Text = "完了通知";
+            this.chkboxNotice.UseVisualStyleBackColor = true;
+            // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(413, 202);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(70, 54);
+            this.btnTest.TabIndex = 43;
+            this.btnTest.Text = "test";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click_1);
+            // 
+            // selectList
+            // 
+            this.selectList.FormattingEnabled = true;
+            this.selectList.ItemHeight = 12;
+            this.selectList.Location = new System.Drawing.Point(230, 84);
+            this.selectList.Name = "selectList";
+            this.selectList.Size = new System.Drawing.Size(177, 172);
+            this.selectList.TabIndex = 42;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(10, 293);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(53, 12);
+            this.label15.TabIndex = 41;
+            this.label15.Text = "開始日時";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(24, 20);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 12);
+            this.label14.TabIndex = 40;
+            this.label14.Text = "フォルダパス";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 66);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 12);
+            this.label5.TabIndex = 39;
+            this.label5.Text = "ファイルリスト";
+            // 
+            // folderSelect
+            // 
+            this.folderSelect.Location = new System.Drawing.Point(26, 35);
+            this.folderSelect.Name = "folderSelect";
+            this.folderSelect.Size = new System.Drawing.Size(19, 19);
+            this.folderSelect.TabIndex = 38;
+            this.folderSelect.Text = "📁";
+            this.folderSelect.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -501,63 +596,9 @@
             this.tabPage2.Text = "ファイル指定";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // folderSelect
-            // 
-            this.folderSelect.Location = new System.Drawing.Point(26, 35);
-            this.folderSelect.Name = "folderSelect";
-            this.folderSelect.Size = new System.Drawing.Size(19, 19);
-            this.folderSelect.TabIndex = 38;
-            this.folderSelect.Text = "📁";
-            this.folderSelect.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 66);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 12);
-            this.label5.TabIndex = 39;
-            this.label5.Text = "ファイルリスト";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(24, 20);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 12);
-            this.label14.TabIndex = 40;
-            this.label14.Text = "フォルダパス";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(10, 293);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 12);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "開始日時";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(230, 84);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(177, 172);
-            this.listBox1.TabIndex = 42;
-            // 
-            // btnTest
-            // 
-            this.btnTest.Location = new System.Drawing.Point(423, 114);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(70, 54);
-            this.btnTest.TabIndex = 43;
-            this.btnTest.Text = "test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click_1);
-            // 
             // MainWindow
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(531, 442);
@@ -570,6 +611,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FileTimeStampChanger";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainWindow_DragDrop);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -600,7 +642,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TextBox txtStepStart;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListBox folderList;
         private System.Windows.Forms.TextBox txtFolderName;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -627,7 +668,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button folderSelect;
         private System.Windows.Forms.Button btnTest;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox selectList;
+        private System.Windows.Forms.CheckBox chkboxNotice;
+        private System.Windows.Forms.ListBox folderList;
+        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Button btnSelectClear;
     }
 }
 

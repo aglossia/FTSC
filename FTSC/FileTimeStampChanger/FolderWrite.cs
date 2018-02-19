@@ -10,12 +10,25 @@ namespace FileTimeStampChanger
 {
     public partial class MainWindow
     {
+        static Boolean selectFlag = false;
+
+        static string[] b = {};
+        List<string> list = new List<string>(b);
+
         private void folderOpen_Click(object sender, EventArgs e)
         {
             folderList.Items.Clear();
             var directory = txtFolderName.Text;
             var x = new System.IO.DirectoryInfo(directory);
-            folderList.Items.AddRange(x.GetFiles("*"));
+            try{
+                folderList.Items.AddRange(x.GetFiles("*"));
+            }
+            catch(DirectoryNotFoundException)
+            {
+                MessageBox.Show("指定されたフォルダが見つかりません");
+                return;
+            }
+            
             
             //指定フォルダ以下のファイルをすべて取得する
             files = System.IO.Directory.GetFiles
@@ -26,8 +39,48 @@ namespace FileTimeStampChanger
                 );
         }
 
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            //string path = System.IO.Path.GetDirectoryName(txtFolderName.Text);
+            selectList.Items.Clear();
+
+            for(int i = 0 ; i < folderList.SelectedItems.Count ; i++){
+                selectList.Items.Add(folderList.SelectedItems[i]);
+                list.Add(txtFolderName.Text + "\\" + folderList.SelectedItems[i].ToString());
+            }
+
+            selectFlag = true;
+
+        }
+
+        private void btnSelectClear_Click(object sender, EventArgs e)
+        {
+            selectList.Items.Clear();
+            list.Clear();
+            selectFlag = false;
+        }
+
+
         private void btnWriteFolder_Click(object sender, EventArgs e)
         {
+
+            DialogResult result = MessageBox.Show("ファイルを上書きしますか？",
+                "質問",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Exclamation,
+                MessageBoxDefaultButton.Button1);
+            //何が選択されたか調べる
+
+            if (result == DialogResult.Yes)
+            {
+
+            }
+            else if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            string[] changeArray;
             Random cRandom = new System.Random();
 
             utility util = new utility();
@@ -55,6 +108,13 @@ namespace FileTimeStampChanger
                 stepEnd = int.Parse(txtStepEnd.Text)*60;
             }
             
+            if (selectFlag == false){
+                changeArray = files;
+            }
+            else
+            {
+                changeArray = list.ToArray();
+            }
 
             int year = (int)yearUD.Value;
             int month = (int)monthUD.Value;
@@ -65,7 +125,7 @@ namespace FileTimeStampChanger
             DateTime dt = new DateTime(year, month, day, hour, min, sec, 123);
             string format = "yyyy/MM/dd HH:mm:ss";
 
-            foreach(string x in files){
+            foreach(string x in changeArray){
 
                 addTime += cRandom.Next(stepStart, stepEnd);
 
@@ -75,6 +135,12 @@ namespace FileTimeStampChanger
                 File.SetLastWriteTime(x, DateTime.ParseExact(tx, format, null));
                 File.SetLastAccessTime(x, DateTime.ParseExact(tx, format, null));
             }
+
+            if (chkboxNotice.Checked == true) { 
+                MessageBox.Show("write finish");
+            }
+
+
         }
     }
 }

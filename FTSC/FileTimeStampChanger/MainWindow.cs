@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.IO;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace FileTimeStampChanger
 {
@@ -169,8 +171,41 @@ namespace FileTimeStampChanger
 
         private void btnTest_Click_1(object sender, EventArgs e)
         {
-            //listBox1.Items.Add(folderList.SelectedItems);
-            MessageBox.Show(folderList.SelectedItems[1].ToString());
+            //string a = folderList.SelectedItems.ToString();
+            string[] b = {};
+            List<string> list = new List<string>(b);
+
+            for(int i = 0 ; i < folderList.SelectedItems.Count ; i++){
+                selectList.Items.Add(folderList.SelectedItems[i]);
+                list.Add(folderList.SelectedItems[i].ToString());
+            }
+
+            //string a = listBox1.Items[1].ToString();
+
+            //MessageBox.Show(folderList.SelectedItems[1].ToString());
+            /*
+            DialogResult result = MessageBox.Show("ファイルを上書きしますか？",
+                "質問",
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Exclamation,
+                MessageBoxDefaultButton.Button1);
+             */
         }
+
+        private void txtFolderName_DragDrop(object sender, DragEventArgs e)
+        {
+            MessageBox.Show("a");
+        }
+
+        private void MainWindow_DragDrop(object sender, DragEventArgs e)
+        {
+            MessageBox.Show("a");
+        }
+
+
+
+
+
+
     }
 }
