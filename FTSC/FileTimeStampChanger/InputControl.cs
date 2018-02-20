@@ -105,7 +105,7 @@ namespace FileTimeStampChanger
 
             if (e.KeyData == Keys.Left)
             {
-                if ((disc & 0x3) != 0)
+                if (disc == 0x3)
                 {
                     disc |= 0x4;
                 }
@@ -115,18 +115,23 @@ namespace FileTimeStampChanger
                 }
 
             }
-            else if (e.KeyData == Keys.Right && (disc & 0x1) != 0)
+            else if (e.KeyData == Keys.Right)
             {
-                if ((disc & 0x1) != 0)
+                if (disc == 0x1)
                 {
                     disc |= 0x2;
-                } else if ((disc & 0x7) != 0)
+                } else if (disc == 0x7)
                 {
                     MessageBox.Show("congratulations!!!");
+                    disc = 0;
+                }
+                else
+                {
+                    disc &= ~0x2;
                 }
 
             }
-            testBox.Text = disc.ToString();
+            testBox.Text = Convert.ToString(disc,2).PadLeft(4,'0');
 
             shift = 1;
         }

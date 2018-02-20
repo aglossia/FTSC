@@ -16,3 +16,12 @@ E:\work\tl\sorce\FTSC\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.csproj
 E:\work\tl\sorce\FTSC\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.MainWindow.resources
 E:\work\tl\sorce\FTSC\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.Properties.Resources.resources
 E:\work\tl\sorce\FTSC\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.csproj.GenerateResource.Cache
+X:\sorce\FTSC\FTSC\FileTimeStampChanger\bin\Debug\FileTimeStampChanger.exe.config
+X:\sorce\FTSC\FTSC\FileTimeStampChanger\bin\Debug\FileTimeStampChanger.exe
+X:\sorce\FTSC\FTSC\FileTimeStampChanger\bin\Debug\FileTimeStampChanger.pdb
+X:\sorce\FTSC\FTSC\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.csprojResolveAssemblyReference.cache
+X:\sorce\FTSC\FTSC\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.MainWindow.resources
+X:\sorce\FTSC\FTSC\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.Properties.Resources.resources
+X:\sorce\FTSC\FTSC\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.csproj.GenerateResource.Cache
+X:\sorce\FTSC\FTSC\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.exe
+X:\sorce\FTSC\FTSC\FileTimeStampChanger\obj\Debug\FileTimeStampChanger.pdb
