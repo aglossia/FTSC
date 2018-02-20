@@ -10,6 +10,9 @@ namespace FileTimeStampChanger
 {
     public partial class MainWindow
     {
+
+        static int disc = 0;
+
         // 年入力
         private void yearUD_ValueChanged(object sender, EventArgs e)
         {
@@ -96,5 +99,81 @@ namespace FileTimeStampChanger
             }
         }
 
+        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage1;
+
+            if (e.KeyData == Keys.Left)
+            {
+                if ((disc & 0x3) != 0)
+                {
+                    disc |= 0x4;
+                }
+                else
+                {
+                    disc |= 0x1;
+                }
+
+            }
+            else if (e.KeyData == Keys.Right && (disc & 0x1) != 0)
+            {
+                if ((disc & 0x1) != 0)
+                {
+                    disc |= 0x2;
+                } else if ((disc & 0x7) != 0)
+                {
+                    MessageBox.Show("congratulations!!!");
+                }
+
+            }
+            testBox.Text = disc.ToString();
+
+            shift = 1;
+        }
+
+        //static TabControlCancelEventArgs a ;
+        static int shift = 0;
+        
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            //tabControl1.SelectedTab = tabPage1;
+            //MessageBox.Show("aa");
+            //2番目のタブを選択できないようにする
+            if (e.TabPageIndex == 1)
+            {
+               // e.Cancel = true;
+            }
+            
+        }
+        
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            
+            if (shift == 0){
+                if (e.TabPageIndex == 1)
+                {
+                tabControl1.SelectedTab = tabPage2;
+                }
+                if (e.TabPageIndex == 2)
+                {
+                tabControl1.SelectedTab = tabPage1;
+                }
+            }
+            else
+            {
+                if (e.TabPageIndex == 1)
+                {
+                tabControl1.SelectedTab = tabPage1;
+                }
+                if (e.TabPageIndex == 2)
+                {
+                tabControl1.SelectedTab = tabPage2;
+                }
+                shift = 0;
+            }
+            
+
+        }
+        
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.btnOpen = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,10 +46,15 @@
             this.txtFolderName = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.testBox = new System.Windows.Forms.TextBox();
             this.btnSelectClear = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.chkboxNotice = new System.Windows.Forms.CheckBox();
             this.btnTest = new System.Windows.Forms.Button();
+            this.contextMenuStrip5 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.aToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.selectList = new System.Windows.Forms.ListBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -72,8 +78,12 @@
             this.txtStepEnd = new System.Windows.Forms.TextBox();
             this.folderOpen = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.contextMenuStrip5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hourUD)).BeginInit();
@@ -81,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.monthUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearUD)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtFileName
@@ -231,14 +242,17 @@
             this.tabControl1.AllowDrop = true;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 36);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(507, 418);
             this.tabControl1.TabIndex = 19;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.testBox);
             this.tabPage1.Controls.Add(this.btnSelectClear);
             this.tabPage1.Controls.Add(this.btnSelect);
             this.tabPage1.Controls.Add(this.chkboxNotice);
@@ -277,6 +291,13 @@
             this.tabPage1.Text = "フォルダ指定";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // testBox
+            // 
+            this.testBox.Location = new System.Drawing.Point(413, 227);
+            this.testBox.Name = "testBox";
+            this.testBox.Size = new System.Drawing.Size(70, 19);
+            this.testBox.TabIndex = 47;
+            // 
             // btnSelectClear
             // 
             this.btnSelectClear.Location = new System.Drawing.Point(413, 143);
@@ -309,13 +330,44 @@
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(413, 202);
+            this.btnTest.ContextMenuStrip = this.contextMenuStrip5;
+            this.btnTest.Location = new System.Drawing.Point(413, 185);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(70, 54);
+            this.btnTest.Size = new System.Drawing.Size(70, 26);
             this.btnTest.TabIndex = 43;
             this.btnTest.Text = "test";
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click_1);
+            // 
+            // contextMenuStrip5
+            // 
+            this.contextMenuStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aToolStripMenuItem4});
+            this.contextMenuStrip5.Name = "contextMenuStrip5";
+            this.contextMenuStrip5.Size = new System.Drawing.Size(84, 26);
+            // 
+            // aToolStripMenuItem4
+            // 
+            this.aToolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aToolStripMenuItem5});
+            this.aToolStripMenuItem4.Name = "aToolStripMenuItem4";
+            this.aToolStripMenuItem4.Size = new System.Drawing.Size(83, 22);
+            this.aToolStripMenuItem4.Text = "a";
+            // 
+            // aToolStripMenuItem5
+            // 
+            this.aToolStripMenuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aToolStripMenuItem6});
+            this.aToolStripMenuItem5.Name = "aToolStripMenuItem5";
+            this.aToolStripMenuItem5.Size = new System.Drawing.Size(83, 22);
+            this.aToolStripMenuItem5.Text = "a";
+            // 
+            // aToolStripMenuItem6
+            // 
+            this.aToolStripMenuItem6.Name = "aToolStripMenuItem6";
+            this.aToolStripMenuItem6.Size = new System.Drawing.Size(83, 22);
+            this.aToolStripMenuItem6.Text = "a";
+            this.aToolStripMenuItem6.Click += new System.EventHandler(this.aToolStripMenuItem6_Click);
             // 
             // selectList
             // 
@@ -596,14 +648,41 @@
             this.tabPage2.Text = "ファイル指定";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(531, 26);
+            this.menuStrip1.TabIndex = 20;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // aToolStripMenuItem
+            // 
+            this.aToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aToolStripMenuItem1});
+            this.aToolStripMenuItem.Name = "aToolStripMenuItem";
+            this.aToolStripMenuItem.Size = new System.Drawing.Size(27, 22);
+            this.aToolStripMenuItem.Text = "a";
+            // 
+            // aToolStripMenuItem1
+            // 
+            this.aToolStripMenuItem1.Name = "aToolStripMenuItem1";
+            this.aToolStripMenuItem1.Size = new System.Drawing.Size(83, 22);
+            this.aToolStripMenuItem1.Text = "a";
+            // 
             // MainWindow
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 442);
+            this.ClientSize = new System.Drawing.Size(531, 658);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -612,9 +691,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FileTimeStampChanger";
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainWindow_DragDrop);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyDown);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.contextMenuStrip5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.minUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.secUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hourUD)).EndInit();
@@ -623,7 +704,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.yearUD)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -673,6 +757,14 @@
         private System.Windows.Forms.ListBox folderList;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnSelectClear;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip5;
+        private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem6;
+        private System.Windows.Forms.TextBox testBox;
     }
 }
 
